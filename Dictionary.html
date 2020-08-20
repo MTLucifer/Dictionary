@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<span id="result"></span>
+<script>
+    let word = prompt("Nhập từ cần tra");
+    let wordViet = ["xin chào","tạm biệt","chạy","đi bộ","tiền","mua","bán","nhà","cửa"];
+    let wordEng = ["hello","goodbye","run","walk","money","buy","sale","house","door"];
+    let result = "";
+    for (let i=0;i<wordViet.length;i++){
+        if (wordViet[i] === word){
+            result = "Dịch: " + wordEng[i];
+            break;
+        }
+        else if (wordEng[i] === word){
+            result = "Translate: " + wordViet[i];
+            break;
+        }
+        else
+            result = "Eó có";
+    }
+    document.write(result);
+</script>
+</body>
+</html>
