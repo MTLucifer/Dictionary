@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame" />
+<input type="button" value="Đánh x" onclick="markX()">
+<input type="button" value="Đánh o" onclick="markO()">
+<script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = new Array('_', '_', '_', '_', '_');
+    }
+    for (let i = 0; i < 5; i++) {
+        data += "<br/> <br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
+        }
+    }
+    data += "<br/><br/><input type='button' value='Đánh x' onclick='markX()'>"
+    b.innerHTML = data;
+
+    function markX() {
+        let positionX = prompt("Cột: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/> <br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Đánh o' onclick='markO()'>"
+        b.innerHTML = "<hr/>" + data;
+    }
+    function markO() {
+        let positionX = prompt("Cột: ");
+        let positionY = prompt("Dòng: ");
+        data = "";
+        board[positionX][positionY] = "o";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/> <br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Đánh x' onclick='markX()'>"
+        b.innerHTML = "<hr/>" + data;
+    }
+
+</script>
+</body>
+</html>

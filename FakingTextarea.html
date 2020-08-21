@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+<body>
+<h3>Gõ gì đó vào đây: </h3>
+<textarea id="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+<script>
+    let str = ' To turn methanol into motion, the researchers coated a nickel-titanium alloy wire with platinum. The alloy contracts like a muscle when heated, and extends once cool. The platinum generates heat by combusting any methanol vapor that comes in contact with it. By varying the exposure to fuel in a periodic pattern, the temperature varies and the micromuscle accordions. That motion causes the bot’s forelegs to rear up. When the legs scooch back again, the body drags forward.';
+    let cstr = str.split('');
+    let n = "";
+console.log(cstr)
+    function typeTextarea(){
+        let a = document.getElementById('txt').value;
+        let j = a.length;
+        if(j > 0) {
+            for( let i=1; i<=j; i++) {
+                n = n + cstr[i];
+                if(i == cstr.length-1) {
+                    document.getElementById('txt').value = "";
+                    n = "";
+                }
+            }
+        }
+        document.getElementById('txt').value = n;
+        n="";
+        setTimeout("typeTextarea()", 1);
+    }
+
+</script>
+</body>
+</html>
